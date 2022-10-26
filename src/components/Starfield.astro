@@ -4,7 +4,6 @@
 
 <script>
   const COUNT = Math.min((window.screen.width + window.screen.height) / 3, 2000);
-  console.log(COUNT);
   const SPEED = 0.1;
   class Star {
     x: number;
@@ -70,7 +69,9 @@
     ctx.translate(width / 2, height / 2);
     ctx.fillStyle = "rgba(4, 41, 98, 0.51)";
     ctx.strokeStyle = "white";
-    rafId = requestAnimationFrame(frame);
+    window.setTimeout(() => {
+      rafId = requestAnimationFrame(frame);
+    }, 1000);
   }
   function frame() {
     const { clientWidth: width, clientHeight: height } = container;
