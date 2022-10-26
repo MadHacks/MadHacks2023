@@ -1,6 +1,7 @@
 ---
 import Container from "./Container.astro"
-
+import { Image } from '@astrojs/image/components';
+import logo from '../images/logo.png';
 ---
 
 <div class="relative">
@@ -9,11 +10,27 @@ import Container from "./Container.astro"
         <div class="blur-[106px] h-32 bg-gradient-to-r from-cyan-400 to-sky-300 dark:to-indigo-600"></div>
     </div>
     <Container>
-        <div class="relative pt-36 ml-auto">
+        <div class="relative pt-20 ml-auto">
             <div class="lg:w-2/3 text-center mx-auto">
-                <h1 class="text-gray-900 dark:text-white font-bold text-5xl md:text-6xl xl:text-7xl">Shaping a world with <span class="text-primary dark:text-white">reimagination.</span></h1>
-                <p class="mt-8 text-gray-700 dark:text-gray-300">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio incidunt nam itaque sed eius modi error totam sit illum. Voluptas doloribus asperiores quaerat aperiam. Quidem harum omnis beatae ipsum soluta!</p>
-                <div class="mt-16 flex flex-wrap justify-center gap-y-4 gap-x-6">
+                <h1 class="text-gray-900 font-header dark:text-white font-semibold text-5xl md:text-6xl xl:text-7xl">MadHacks</h1>
+                <h5 class="text-gray-900 dark:text-white text-md md:text-lg xl:text-xl">University of Wisconsin–Madison</h5>
+                <Image alt="MadHacks Brain and Blue Wave Logo" class="mx-auto my-6 w-64 md:w-80 xl:w-96" src={logo} aspectRatio="6:5" width={400} />
+                <h2 class="text-gray-900 font-header dark:text-white font-semibold text-3xl md:text-4xl xl:text-5xl mb-4">We're Back!</h2>
+                <h4 class="text-gray-900 dark:text-white text-lg md:text-xl xl:text-2xl">March 4th-5th, 2023</h4>
+                <p class="text-gray-900 dark:text-white pt-10 pb-2">Get notified when hacker and mentor apps go live.</p>
+                <form action="https://madhacks.us21.list-manage.com/subscribe/post" method="POST">
+                <div class="relative flex p-2 rounded-xl bg-white shadow-2xl mx-auto sm:w-80">
+                    <input type="hidden" name="u" value="b59659ed4f08cdf39fd2b335d">
+                    <input type="hidden" name="id" value="0adbd799e6">
+                    <input type="email" autocapitalize="off" autocorrect="off" name="MERGE0" id="MERGE0" size="25" placeholder="Email" class="w-full p-3" type="text">
+                    <button type="submit" title="Sign Up" class="ml-auto py-3 px-6 rounded-lg text-center transition bg-gradient-to-br from-primary to-sky-600 hover:to-sky-700 active:to-sky-900 focus:to-sky-800">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-5 mx-auto text-white" fill="currentColor" >
+                        <path d="M256 32v18c73 11 128 74 128 150v33c0 46 16 90 44 125l15 19a24 24 0 0 1-19 39H24a24 24 0 0 1-19-39l15-19c29-35 44-79 44-125v-33c0-76 56-139 128-150V32a32 32 0 1 1 64 0zm-40 64c-57 0-104 47-104 104v33c0 48-14 95-40 135h304c-26-40-40-87-40-135v-33c0-57-47-104-104-104h-16zm72 352c0 16-7 33-19 45a64 64 0 0 1-109-45h128z"/>
+                      </svg>
+                    </button>
+                </div>
+                </form>
+                <!-- <div class="mt-16 flex flex-wrap justify-center gap-y-4 gap-x-6">
                     <a
                       href="#"
                       class="relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max"
@@ -48,24 +65,24 @@ import Container from "./Container.astro"
                 </div>
             </div>
             <div class="mt-12 grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6">
-                <div class="p-4 grayscale transition duration-200 hover:grayscale-0">
+                <div class="p-4 brightness-500 opacity-50 hover:brightness-100 hover:opacity-100">
                     <img src="./images/clients/microsoft.svg" class="h-12 w-auto mx-auto" loading="lazy" alt="client logo" width="" height="" />
                   </div>
-                <div class="p-4 grayscale transition duration-200 hover:grayscale-0">
+                <div class="p-4 brightness-500 opacity-50 hover:brightness-100 hover:opacity-100">
                   <img src="./images/clients/airbnb.svg" class="h-12 w-auto mx-auto" loading="lazy" alt="client logo" width="" height="" />
                 </div>
-                <div class="p-4 flex grayscale transition duration-200 hover:grayscale-0">
+                <div class="p-4 flex brightness-500 opacity-50 hover:brightness-100 hover:opacity-100">
                   <img src="./images/clients/google.svg" class="h-9 w-auto m-auto" loading="lazy" alt="client logo" width="" height="" />
                 </div>
-                <div class="p-4 grayscale transition duration-200 hover:grayscale-0">
-                    <img src="./images/clients/ge.svg" class="h-12 w-auto mx-auto" loading="lazy" alt="client logo" width="" height="" />
-                  </div>
-                  <div class="p-4 flex grayscale transition duration-200 hover:grayscale-0">
-                    <img src="./images/clients/netflix.svg" class="h-8 w-auto m-auto" loading="lazy" alt="client logo" width="" height="" />
-                  </div>
-                <div class="p-4 grayscale transition duration-200 hover:grayscale-0">
-                    <img src="./images/clients/google-cloud.svg" class="h-12 w-auto mx-auto" loading="lazy" alt="client logo" width="" height="" />
+                <div class="p-4 brightness-500 opacity-50 hover:brightness-100 hover:opacity-100">
+                  <img src="./images/clients/ge.svg" class="h-12 w-auto mx-auto" loading="lazy" alt="client logo" width="" height="" />
                 </div>
+                <div class="p-4 flex brightness-500 opacity-50 hover:brightness-100 hover:opacity-100">
+                  <img src="./images/clients/netflix.svg" class="h-8 w-auto m-auto" loading="lazy" alt="client logo" width="" height="" />
+                </div>
+                <div class="p-4 brightness-500 opacity-50 hover:brightness-100 hover:opacity-100">
+                    <img src="./images/clients/google-cloud.svg" class="h-12 w-auto mx-auto" loading="lazy" alt="client logo" width="" height="" />
+                </div> -->
               </div>
         </div>
     </Container>

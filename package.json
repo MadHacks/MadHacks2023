@@ -10,9 +10,10 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^1.1.5"
+    "@astrojs/image": "^0.10.0",
+    "astro": "^1.5.2"
   },
   "devDependencies": {
-    "@astrojs/tailwind": "^1.0.0"
+    "@astrojs/tailwind": "^2.1.1"
   }
 }

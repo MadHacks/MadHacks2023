@@ -15,7 +15,7 @@ module.exports = {
       inherit: colors.inherit,
       current: colors.current,
       transparent: colors.transparent,
-      primary: "#9333EA",
+      primary: "#0096b1",
       secondary: "#ff7e33",
       info: "#0C63E7",
       black: colors.black,
@@ -27,11 +27,11 @@ module.exports = {
         200: "#C6C8CD",
         300: "#ACAEB6",
         400: "#92959F",
-        500: "#777C87",
-        600: "#5D6370",
-        700: "#434959",
-        800: "#293041",
-        900: "#0f172a",
+        500: "#3D72C2",
+        600: "#2F60AA",
+        700: "#214E92",
+        800: "#123B7A",
+        900: "#042962",
       },
       zinc: colors.zinc,
       neutral: colors.neutral,
@@ -192,6 +192,7 @@ module.exports = {
       125: '1.25',
       150: '1.5',
       200: '2',
+      500: '5',
     },
     borderColor: ({ theme }) => ({
       ...theme('colors'),
@@ -362,6 +363,7 @@ module.exports = {
     },
     fontFamily: {
       sans: [
+        'Outfit',
         'ui-sans-serif',
         'system-ui',
         '-apple-system',
@@ -379,6 +381,7 @@ module.exports = {
       ],
       serif: ['ui-serif', 'Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
       mono: [
+        'JetBrains Mono',
         'ui-monospace',
         'SFMono-Regular',
         'Menlo',
@@ -388,6 +391,17 @@ module.exports = {
         '"Courier New"',
         'monospace',
       ],
+      header: [
+        'Outfit',
+        'ui-sans-serif',
+        'system-ui',
+        '-apple-system',
+        'BlinkMacSystemFont',
+        '"Segoe UI"',
+        'Roboto',
+        '"Helvetica Neue"',
+        'Arial',
+      ]
     },
     fontSize: {
       xs: ['0.75rem', { lineHeight: '1rem' }],
