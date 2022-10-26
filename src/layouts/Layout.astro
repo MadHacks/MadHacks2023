@@ -14,32 +14,25 @@ import AppHeader from "../components/AppHeader.astro"
 		<meta name="description" content="MadHacks is the largest hackathon in Wisconsin, and we're back.">
 		<title>MadHacks 2023</title>
 
-		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link
-			rel="preload"
-			href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap"
-			as="style"
-			onload="this.onload=null;this.rel='stylesheet'"
-		/>
-		<link
-			rel="preload"
-			href="https://fonts.googleapis.com/css2?family=Outfit:wght@600&display=swap"
-			as="style"
-			onload="this.onload=null;this.rel='stylesheet'"
-		/>
-		<noscript>
-				<link
-						href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap"
-						rel="stylesheet"
-						type="text/css"
-				/>
-				<link
-						href="https://fonts.googleapis.com/css2?family=Outfit:wght@600&display=swap"
-						rel="stylesheet"
-						type="text/css"
-				/>
-		</noscript>
+		<style>
+			@font-face {
+				font-family: 'Nunito Sans';
+				font-style: normal;
+				font-weight: 400;
+				font-display: swap;
+				src: url(https://fonts.gstatic.com/s/nunitosans/v12/pe0qMImSLYBIv1o4X1M8cce9I9s.woff2) format('woff2');
+				unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+			}
+			@font-face {
+				font-family: 'Outfit';
+				font-style: normal;
+				font-weight: 600;
+				font-display: swap;
+				src: url(https://fonts.gstatic.com/s/outfit/v6/QGYyz_MVcBeNP4NjuGObqx1XmO1I4e6yO4a0Ew.woff2) format('woff2');
+				unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+			}
+		</style>
 	</head>
 	<body class="bg-gray-900">
 		<slot />
