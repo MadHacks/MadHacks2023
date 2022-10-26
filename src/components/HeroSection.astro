@@ -5,14 +5,14 @@ import logo from '../images/logo.png';
 import Starfield from "./Starfield.astro";
 ---
 
-<div class="relative">
+<div class="relative min-h-full flex">
+    <Starfield />
     <div aria-hidden="true" class="absolute inset-0 grid grid-cols-2 -space-x-52 opacity-20">
         <div class="blur-[106px] h-56 bg-gradient-to-br from-primary to-purple-400"></div>
         <div class="blur-[106px] h-32 bg-gradient-to-r from-cyan-400 to-sky-300"></div>
     </div>
-    <Container>
-        <Starfield />
-        <div class="relative pb-16 pt-16 sm:pt-20 sm:pb-20 ml-auto min-h-screen flex items-center">
+    <Container class="w-full">
+        <div class="relative pb-16 pt-16 sm:pt-20 sm:pb-20 ml-auto min-h-full flex items-center">
             <div class="lg:w-2/3 text-center mx-auto">
                 <h1 class="font-header text-white font-semibold text-5xl md:text-6xl xl:text-7xl">MadHacks</h1>
                 <h5 class="text-white text-md md:text-lg xl:text-xl">University of Wisconsin–Madison</h5>
