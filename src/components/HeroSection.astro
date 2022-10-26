@@ -5,19 +5,19 @@ import logo from '../images/logo.png';
 ---
 
 <div class="relative">
-    <div aria-hidden="true" class="absolute inset-0 grid grid-cols-2 -space-x-52 opacity-40 dark:opacity-20">
-        <div class="blur-[106px] h-56 bg-gradient-to-br from-primary to-purple-400 dark:from-blue-700"></div>
-        <div class="blur-[106px] h-32 bg-gradient-to-r from-cyan-400 to-sky-300 dark:to-indigo-600"></div>
+    <div aria-hidden="true" class="absolute inset-0 grid grid-cols-2 -space-x-52 opacity-20">
+        <div class="blur-[106px] h-56 bg-gradient-to-br from-primary to-purple-400"></div>
+        <div class="blur-[106px] h-32 bg-gradient-to-r from-cyan-400 to-sky-300"></div>
     </div>
     <Container>
         <div class="relative pt-20 ml-auto">
             <div class="lg:w-2/3 text-center mx-auto">
-                <h1 class="text-gray-900 font-header dark:text-white font-semibold text-5xl md:text-6xl xl:text-7xl">MadHacks</h1>
-                <h5 class="text-gray-900 dark:text-white text-md md:text-lg xl:text-xl">University of Wisconsin–Madison</h5>
-                <Picture alt="MadHacks Brain and Blue Wave Logo" class="mx-auto flex justify-center my-6 w-64 md:w-80 xl:w-96" src={logo} aspectRatio="6:5" sizes="(min-width: 1280px) 384px, (min-width: 768px) 320px, 256px" widths={[256, 320, 384, 512, 640, 768]} formats={['avif', 'webp', 'png']} quality={100} />
-                <h2 class="text-gray-900 font-header dark:text-white font-semibold text-3xl md:text-4xl xl:text-5xl mb-4">We're Back!</h2>
-                <h4 class="text-gray-900 dark:text-white text-lg md:text-xl xl:text-2xl">March 4th-5th, 2023</h4>
-                <p class="text-gray-900 dark:text-white pt-10 pb-2">Get notified when hacker and mentor apps go live.</p>
+                <h1 class="font-header text-white font-semibold text-5xl md:text-6xl xl:text-7xl">MadHacks</h1>
+                <h5 class="text-white text-md md:text-lg xl:text-xl">University of Wisconsin–Madison</h5>
+                <Picture alt="MadHacks Brain and Blue Wave Logo" class="mx-auto flex justify-center my-6 w-64 md:w-80 xl:w-96 h-52 md:h-64 xl:h-80" src={logo} aspectRatio="6:5" sizes="(min-width: 1280px) 384px, (min-width: 768px) 320px, 256px" widths={[256, 320, 384, 512, 640, 768]} formats={['avif', 'webp', 'png']} quality={90} />
+                <h2 class="font-header text-white font-semibold text-3xl md:text-4xl xl:text-5xl mb-4">We're Back!</h2>
+                <h4 class="text-white text-lg md:text-xl xl:text-2xl">March 4th-5th, 2023</h4>
+                <p class="text-white pt-10 pb-2">Get notified when hacker and mentor apps go live.</p>
                 <form action="https://madhacks.us21.list-manage.com/subscribe/post" method="POST">
                   <div class="relative flex p-2 box-content rounded-xl bg-white shadow-2xl mx-2 sm:w-80 sm:mx-auto">
                       <input type="hidden" name="u" value="b59659ed4f08cdf39fd2b335d">

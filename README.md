@@ -1,9 +1,4 @@
-# astrolus
-
-A page template built with astro and tailwindcss using tailus blocks.
-
-![Tailus astro based theme](./public/astrolus-light.png)
-![Tailus astro based dark theme](./public/astrolus-dark.png)
+# MadHacks 2023
 
 ## 🚀 Project Structure
 
