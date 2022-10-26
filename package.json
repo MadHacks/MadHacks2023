@@ -11,7 +11,8 @@
   },
   "dependencies": {
     "@astrojs/image": "^0.10.0",
-    "astro": "^1.5.2"
+    "astro": "^1.5.2",
+    "sharp": "^0.31.1"
   },
   "devDependencies": {
     "@astrojs/tailwind": "^2.1.1"
