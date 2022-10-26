@@ -12,6 +12,7 @@
   "dependencies": {
     "@astrojs/image": "^0.10.0",
     "astro": "^1.5.2",
+    "astro-compress": "^1.0.12",
     "sharp": "^0.31.1"
   },
   "devDependencies": {
