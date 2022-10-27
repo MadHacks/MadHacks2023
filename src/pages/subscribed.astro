@@ -1,0 +1,38 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Container from "../components/Container.astro"
+import AppHeader from '../components/AppHeader.astro';
+---
+
+<Layout title="Subscribed - MadHacks 2023">
+  <AppHeader />
+  <div class="relative min-h-full flex">
+    <div aria-hidden="true" class="absolute inset-0 grid grid-cols-2 -space-x-52 opacity-20">
+        <div class="blur-[106px] h-56 bg-gradient-to-br from-primary to-purple-400"></div>
+        <div class="blur-[106px] h-32 bg-gradient-to-r from-cyan-400 to-sky-300"></div>
+    </div>
+    <Container class="w-full">
+          <div class="relative pb-16 pt-16 sm:pt-20 sm:pb-20 ml-auto min-h-full flex items-center">
+              <div class="lg:w-2/3 text-center mx-auto">
+                  <h1 class="font-header text-white font-semibold text-5xl md:text-6xl xl:text-7xl">Confirmed!</h1>
+                  <h5 class="text-white text-md md:text-lg xl:text-xl">You'll be notified when our applications go live.</h5>
+                  <img style="animation: 5s ease-in-out 0s infinite dropShadow" loading="eager" alt="eMail Confirmed" class="mx-auto flex justify-center my-10 w-64 md:w-80 xl:w-96 h-52 md:h-64 xl:h-80" src="/images/subscribed.svg" />
+                  <h2 class="font-header text-white font-semibold text-3xl md:text-4xl xl:text-5xl mb-4">Happy Hacking</h2>
+                </div>
+          </div>
+      </Container>
+    </div>
+    <style>
+    @keyframes dropShadow {
+        0% {
+          filter: drop-shadow(0px 0px 25px #0096b1c0);
+        }
+        50% {
+          filter: drop-shadow(0px 0px 10px #0096b1a0);
+        }
+        100% {
+          filter: drop-shadow(0px 0px 25px #0096b1c0);
+        }
+      }
+    </style>
+</Layout>
