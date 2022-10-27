@@ -16,7 +16,7 @@ import Starfield from "./Starfield.astro";
             <div class="lg:w-2/3 text-center mx-auto">
                 <h1 class="font-header text-white font-semibold text-5xl md:text-6xl xl:text-7xl">MadHacks</h1>
                 <h5 class="text-white text-md md:text-lg xl:text-xl">University of Wisconsin–Madison</h5>
-                <Picture loading="eager" alt="MadHacks Brain and Blue Wave Logo" class="mx-auto flex justify-center my-6 w-64 md:w-80 xl:w-96 h-52 md:h-64 xl:h-80" src={logo} aspectRatio="6:5" sizes="(min-width: 1280px) 384px, (min-width: 768px) 320px, 256px" widths={[256, 320, 384, 512, 640, 768]} formats={['avif', 'webp', 'png']} quality={90} />
+                <Picture style="animation: 5s ease-in-out 0s infinite dropShadow" loading="eager" alt="MadHacks Brain and Blue Wave Logo" class="mx-auto flex justify-center my-6 w-64 md:w-80 xl:w-96 h-52 md:h-64 xl:h-80" src={logo} aspectRatio="6:5" sizes="(min-width: 1280px) 384px, (min-width: 768px) 320px, 256px" widths={[256, 320, 384, 512, 640, 768]} formats={['avif', 'webp', 'png']} quality={90} />
                 <h2 class="font-header text-white font-semibold text-3xl md:text-4xl xl:text-5xl mb-4">We're Back!</h2>
                 <h4 class="text-white text-lg md:text-xl xl:text-2xl">March 4th-5th, 2023</h4>
                 <p class="text-white pt-10 pb-2">Get notified when hacker and mentor apps go live.</p>
@@ -88,4 +88,17 @@ import Starfield from "./Starfield.astro";
               </div>
         </div>
     </Container>
+    <style>
+      @keyframes dropShadow {
+        0% {
+          filter: drop-shadow(0px 0px 25px #0096b1c0);
+        }
+        50% {
+          filter: drop-shadow(0px 0px 10px #0096b1a0);
+        }
+        100% {
+          filter: drop-shadow(0px 0px 25px #0096b1c0);
+        }
+      }
+    </style>
 </div>
