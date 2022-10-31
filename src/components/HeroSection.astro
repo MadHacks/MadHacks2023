@@ -15,17 +15,17 @@ import Starfield from "./Starfield.astro";
         <div class="relative pb-16 pt-16 sm:pt-20 sm:pb-20 ml-auto min-h-full flex items-center">
             <div class="lg:w-2/3 text-center mx-auto">
                 <h1 class="font-header text-white font-semibold text-5xl md:text-6xl xl:text-7xl">MadHacks</h1>
-                <h5 class="text-white text-md md:text-lg xl:text-xl">University of Wisconsin–Madison</h5>
+                <p class="text-white text-md md:text-lg xl:text-xl">University of Wisconsin–Madison</p>
                 <Picture style="animation: 5s ease-in-out 0s infinite dropShadow" loading="eager" alt="MadHacks Brain and Blue Wave Logo" class="mx-auto flex justify-center my-6 w-64 md:w-80 xl:w-96 h-52 md:h-64 xl:h-80" src={logo} aspectRatio="6:5" sizes="(min-width: 1280px) 384px, (min-width: 768px) 320px, 256px" widths={[256, 320, 384, 512, 640, 768]} formats={['avif', 'webp', 'png']} quality={90} />
                 <h2 class="font-header text-white font-semibold text-3xl md:text-4xl xl:text-5xl mb-4">We're Back!</h2>
-                <h4 class="text-white text-lg md:text-xl xl:text-2xl">March 4th-5th, 2023</h4>
+                <h3 class="text-white text-lg md:text-xl xl:text-2xl">March 4th-5th, 2023</h3>
                 <p class="text-white pt-10 pb-2">Get notified when hacker and mentor apps go live.</p>
                 <form action="https://madhacks.us21.list-manage.com/subscribe/post" method="POST">
                   <div class="relative flex p-2 box-content rounded-xl bg-white shadow-2xl mx-2 sm:w-80 sm:mx-auto">
                       <input type="hidden" name="u" value="b59659ed4f08cdf39fd2b335d">
                       <input type="hidden" name="id" value="0adbd799e6">
-                      <input type="email" autocapitalize="off" autocorrect="off" name="MERGE0" id="MERGE0" size="25" placeholder="Email" class="w-full p-3" type="text">
-                      <button type="submit" title="Sign Up" class="ml-auto py-3 px-6 rounded-lg text-center transition bg-gradient-to-br from-primary to-sky-600 hover:to-sky-700 active:to-sky-900 focus:to-sky-800">
+                      <input type="email" required autocapitalize="off" autocorrect="off" name="MERGE0" id="MERGE0" size="25" placeholder="Email" class="w-full p-3" type="text">
+                      <button type="submit" title="Get Notified" class="ml-auto py-3 px-6 rounded-lg text-center transition bg-gradient-to-br from-primary to-sky-600 hover:to-sky-700 active:to-sky-900 focus:to-sky-800">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-5 mx-auto text-white" fill="currentColor" >
                           <path d="M256 32v18c73 11 128 74 128 150v33c0 46 16 90 44 125l15 19a24 24 0 0 1-19 39H24a24 24 0 0 1-19-39l15-19c29-35 44-79 44-125v-33c0-76 56-139 128-150V32a32 32 0 1 1 64 0zm-40 64c-57 0-104 47-104 104v33c0 48-14 95-40 135h304c-26-40-40-87-40-135v-33c0-57-47-104-104-104h-16zm72 352c0 16-7 33-19 45a64 64 0 0 1-109-45h128z"/>
                         </svg>
