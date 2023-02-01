@@ -3,9 +3,9 @@ import Container from "./Container.astro";
 
 ---
 
-<Container class="w-full">
+<div class="w-full mx-auto px-6 md:px-12 xl:px-6 bg-gray-800">
   <div class="relative pb-10 pt-10 sm:pt-20 sm:pb-20 ml-auto min-h-full flex flex-col items-center">
-    <h1 class="font-header text-white font-semibold text-3xl md:text-4xl xl:text-5xl mt-12 mb-4">Sponsors</h1>
+    <h1 class="font-header text-white font-semibold text-3xl md:text-4xl xl:text-5xl mt-4 mb-4">Sponsors</h1>
     <div class="mt-2 flex flex-wrap justify-center">
       <div class="p-4 brightness-0 invert opacity-70 hover:invert-0 hover:brightness-100 hover:opacity-100">
         <a href="https://www.epic.com" target="_blank"><img src="./images/sponsors/epic.svg" class="h-20 w-auto mx-auto" loading="lazy" alt="client logo" width="" height="" /></a>
@@ -19,6 +19,6 @@ import Container from "./Container.astro";
         <a href="https://www.github.com/" target="_blank"><img src="./images/sponsors/github.svg" class="h-10 w-auto mx-auto" loading="lazy" alt="client logo" width="" height="" /></a>
       </div>
     </div>
-    <a href="/sponsorship.pdf"><p class="text-white mt-8 mb-2">Interested in sponsoring? →</p></a>
+    <a href="/sponsorship.pdf"><p class="text-cyan-300 mt-8 mb-2">Interested in sponsoring? →</p></a>
   </div>
-</Container>
+</div>
