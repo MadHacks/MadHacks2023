@@ -1,7 +1,7 @@
 {
     "name": "MadHacks Website",
     "image": "mcr.microsoft.com/devcontainers/universal",
-    "postStartCommand": "npm i && npm run dev",
+    "postStartCommand": "npm i",
     "forwardPorts": [3000],
     "portsAttributes": {
         "3000": {
