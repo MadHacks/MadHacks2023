@@ -1,8 +1,8 @@
 ---
 import Container from "./Container.astro"
-import { Picture } from '@astrojs/image/components';
 import logo from '../images/logo.png';
 import Starfield from "./Starfield.astro";
+import { Image } from 'astro:assets';
 ---
 
 <div class="relative min-h-full flex">
@@ -16,7 +16,7 @@ import Starfield from "./Starfield.astro";
             <div class="lg:w-2/3 text-center mx-auto">
                 <h1 class="font-header text-white font-semibold text-5xl md:text-6xl xl:text-7xl">MadHacks</h1>
                 <p class="text-cyan-300 text-md md:text-lg xl:text-xl">University of Wisconsin–Madison</p>
-                <Picture style="animation: 5s ease-in-out 0s infinite dropShadow" loading="eager" alt="MadHacks Brain and Blue Wave Logo" class="mx-auto flex justify-center my-6 w-64 md:w-80 xl:w-96 h-52 md:h-64 xl:h-80" src={logo} aspectRatio="6:5" sizes="(min-width: 1280px) 384px, (min-width: 768px) 320px, 256px" widths={[256, 320, 384, 512, 640, 768]} formats={['avif', 'webp', 'png']} quality={90} />
+                <Image style="animation: 5s ease-in-out 0s infinite dropShadow" loading="eager" alt="MadHacks Brain and Blue Wave Logo" class="mx-auto flex justify-center my-6 w-64 md:w-80 xl:w-96 h-52 md:h-64 xl:h-80" src={logo} sizes="(min-width: 1280px) 384px, (min-width: 768px) 320px, 256px" quality={90} />
                 <h2 class="font-header text-white font-semibold text-3xl md:text-4xl xl:text-5xl mb-4">We're Back!</h2>
                 <h3 class="text-white text-lg md:text-xl xl:text-2xl mb-2"><b>Nov 11-12th 2023</b></h3>
                 <h4 class="text-white text-sm md:text-md xl:text-lg">Location: <b>Educational Sciences</b></h4>

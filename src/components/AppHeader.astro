@@ -1,7 +1,7 @@
 ---
 import Container from "./Container.astro";
-import { Picture } from '@astrojs/image/components';
 import logo from '../images/logo.png';
+import { Image } from 'astro:assets';
 ---
 
 <header>
@@ -12,7 +12,7 @@ import logo from '../images/logo.png';
                 <div class="relative z-20 w-full flex justify-between lg:w-max md:px-0">
                     <a href="/" aria-label="logo" class="flex space-x-2 items-center">
                         <div aria-hidden="true" class="flex space-x-1">
-                            <Picture loading="eager" alt="MadHacks Brain and Blue Wave Logo" class="mx-auto flex justify-center w-12 h-10" src={logo} aspectRatio="6:5" sizes="(min-width: 1280px) 384px, (min-width: 768px) 320px, 256px" widths={[256, 320, 384, 512, 640, 768]} formats={['avif', 'webp', 'png']} quality={90} />
+                            <Image loading="eager" alt="MadHacks Brain and Blue Wave Logo" class="mx-auto flex justify-center w-12 h-10" src={logo} sizes="(min-width: 1280px) 384px, (min-width: 768px) 320px, 256px" quality={90} />
                         </div>
                         <span class="text-2xl font-header font-semibold text-white">MadHacks</span>
                     </a>
