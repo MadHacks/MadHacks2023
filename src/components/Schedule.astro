@@ -1,7 +1,5 @@
 ---
-import Container from "./Container.astro";
-
-let eventObject = [
+const eventObject = [
     { startTime: "9:00AM", endTime: "11:00AM", Core: "Check-in", Event: "Team Matching Begins, Career Fair" },
     { startTime: "10:30AM", endTime: "11:00AM", Core: "Walk-in Registration", Event: "Career Fair" },
     { startTime: "11:00AM", endTime: "12:00PM", Core: "Opening Ceremony", Event: "Career Fair" },
@@ -25,65 +23,6 @@ let eventObject = [
     { startTime: "2:30PM", endTime: "3:00PM", Core: "Finalist Presentations", Event: "" },
     { startTime: "3:15PM", endTime: "4:00PM", Core: "Awards & Closing Ceremony", Event: "" }
 ];
-
-const EVENT_START = new Date('2024-11-09T00:00:00-06:00'); // CST is UTC-6
-const EVENT_END = new Date('2024-11-10T23:59:59-06:00');
-
-// Convert a time string to a Date object in CST
-function getTime(timeStr, isNextDay = false) {
-    const [time, modifier] = timeStr.split(/(?=AM|PM)/);
-    let [hours, minutes] = time.split(":");
-    hours = parseInt(hours);
-    minutes = parseInt(minutes);
-
-    if (modifier === "PM" && hours !== 12) hours += 12;
-    if (modifier === "AM" && hours === 12) hours = 0;
-
-    // Create date string in CST
-    const baseDate = isNextDay ? '2024-11-10' : '2024-11-09';
-    const timeString = `${baseDate}T${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:00-06:00`;
-
-    return new Date(timeString);
-}
-
-function isCurrentEvent(startTime, endTime) {
-    // Get current time in CST
-    const now = new Date();
-    // Convert to CST string
-    const cstString = now.toLocaleString("en-US", {
-        timeZone: "America/Chicago",
-        year: 'numeric',
-        month: '2-digit',
-        day: '2-digit',
-        hour: '2-digit',
-        minute: '2-digit',
-        second: '2-digit',
-        hour12: false
-    });
-    const cstNow = new Date(cstString);
-
-    // Check if we're within the event period
-    if (cstNow < EVENT_START || cstNow > EVENT_END) {
-        return false;
-    }
-
-    // Determine if this is a next-day event
-    const isSecondDay = cstNow.getDate() === EVENT_END.getDate();
-
-    let start = getTime(startTime, isSecondDay);
-    let end = getTime(endTime, isSecondDay);
-
-    // Handle overnight events
-    if (end < start) {
-        if (cstNow >= start) {
-            end = new Date(end.getTime() + 24 * 60 * 60 * 1000); // Add 24 hours
-        } else if (cstNow <= end) {
-            start = new Date(start.getTime() - 24 * 60 * 60 * 1000); // Subtract 24 hours
-        }
-    }
-
-    return cstNow >= start && cstNow <= end;
-}
 ---
 <div class="w-full mx-auto px-6 md:px-12 xl:px-6 bg-gray-800">
     <div class="relative pb-10 pt-10 sm:pt-10 sm:pb-10 ml-auto min-h-full flex flex-col items-center">
@@ -99,11 +38,7 @@ function isCurrentEvent(startTime, endTime) {
                 </thead>
                 <tbody>
                     {eventObject.map((element) => (
-                        <tr class={`transition-colors duration-200 ${
-                            isCurrentEvent(element.startTime, element.endTime)
-                                ? "bg-cyan-600"
-                                : "bg-gray-800"
-                        }`}>
+                        <tr class="bg-gray-800">
                             <td class="px-6 py-4 font-medium text-lg whitespace-nowrap text-white">
                                 {element.startTime} - {element.endTime}
                             </td>
@@ -119,4 +54,4 @@ function isCurrentEvent(startTime, endTime) {
             </table>
         </div>
     </div>
-</div>
+</div>xport default Schedule;
