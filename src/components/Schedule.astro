@@ -26,11 +26,10 @@ let eventObject = [
     { startTime: "3:15PM", endTime: "4:00PM", Core: "Awards & Closing Ceremony", Event: "" }
 ];
 
-// define the event dates
-const EVENT_START = new Date(2024, 10, 9); // November 9th, 2024
-const EVENT_END = new Date(2024, 10, 10);   // November 10th, 2024
+const EVENT_START = new Date('2024-11-09T00:00:00-06:00'); // CST is UTC-6
+const EVENT_END = new Date('2024-11-10T23:59:59-06:00');
 
-// utility to convert "9:00AM" style time to Date object for the appropriate event day
+// Convert a time string to a Date object in CST
 function getTime(timeStr, isNextDay = false) {
     const [time, modifier] = timeStr.split(/(?=AM|PM)/);
     let [hours, minutes] = time.split(":");
@@ -40,52 +39,46 @@ function getTime(timeStr, isNextDay = false) {
     if (modifier === "PM" && hours !== 12) hours += 12;
     if (modifier === "AM" && hours === 12) hours = 0;
 
-    // use the appropriate date based on whether it's a next-day event
-    const baseDate = isNextDay ? EVENT_END : EVENT_START;
-    const date = new Date(baseDate);
-    date.setHours(hours, minutes, 0, 0);
+    // Create date string in CST
+    const baseDate = isNextDay ? '2024-11-10' : '2024-11-09';
+    const timeString = `${baseDate}T${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:00-06:00`;
 
-    // adjust for CST (UTC-6)
-    const cstOffset = 6 * 60;
-    const userOffset = date.getTimezoneOffset();
-    const offsetDiff = userOffset - cstOffset;
-    date.setMinutes(date.getMinutes() - offsetDiff);
-
-    return date;
+    return new Date(timeString);
 }
 
 function isCurrentEvent(startTime, endTime) {
+    // Get current time in CST
     const now = new Date();
+    // Convert to CST string
+    const cstString = now.toLocaleString("en-US", {
+        timeZone: "America/Chicago",
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: false
+    });
+    const cstNow = new Date(cstString);
 
-    // adjust current time to CST
-    const cstOffset = 6 * 60;
-    const userOffset = now.getTimezoneOffset();
-    const offsetDiff = userOffset - cstOffset;
-    const cstNow = new Date(now);
-    cstNow.setMinutes(cstNow.getMinutes() - offsetDiff);
-
-    // check if we're within the event period at all
-    const eventStartTime = EVENT_START;
-    eventStartTime.setHours(0, 0, 0, 0);
-    const eventEndTime = new Date(EVENT_END);
-    eventEndTime.setHours(23, 59, 59, 999);
-
-    if (cstNow < eventStartTime || cstNow > eventEndTime) {
+    // Check if we're within the event period
+    if (cstNow < EVENT_START || cstNow > EVENT_END) {
         return false;
     }
 
-    // determine if this is a next-day event time
+    // Determine if this is a next-day event
     const isSecondDay = cstNow.getDate() === EVENT_END.getDate();
 
     let start = getTime(startTime, isSecondDay);
     let end = getTime(endTime, isSecondDay);
 
-    // handle overnight events
+    // Handle overnight events
     if (end < start) {
         if (cstNow >= start) {
-            end.setDate(end.getDate() + 1);
+            end = new Date(end.getTime() + 24 * 60 * 60 * 1000); // Add 24 hours
         } else if (cstNow <= end) {
-            start.setDate(start.getDate() - 1);
+            start = new Date(start.getTime() - 24 * 60 * 60 * 1000); // Subtract 24 hours
         }
     }
 
