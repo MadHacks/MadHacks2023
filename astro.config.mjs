@@ -11,6 +11,7 @@ export default defineConfig({
     "/walkin": "https://airtable.com/appJa8ymShCTPpH9I/paghpcEx85qF2eOAr/form",
     "/devpost": "https://madhacks.devpost.com",
     "/project": "https://airtable.com/appJa8ymShCTPpH9I/pag0C9Q3PGBC9qArU/form"
+    "/organizer-interest": "https://airtable.com/appl182mk027OC698/pag8XoUukjguwopgE/form"
   },
   integrations: [sitemap(), tailwind(), compress()]
 });
